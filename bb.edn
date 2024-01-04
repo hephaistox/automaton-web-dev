@@ -1,4 +1,4 @@
-{:deps {org.clojars.hephaistox/automaton-build-app {:mvn/version "0.0.10"}
+{:deps {org.clojars.hephaistox/automaton-build-app {:mvn/version "0.0.72"}
         }
  :paths []
  :tasks {:requires [[automaton-build-app.tasks.launcher.bb-entrypoint :as build-task-bb-entrypoint] [babashka.process :as babahska-process]]
