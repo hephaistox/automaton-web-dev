@@ -4,11 +4,7 @@
                          :test-dir "target/browser-test"}
           :ltest {:ns-regexp "-test$"
                   :output-to "target/ltest.js"
-                  :target :karma}
-          :portfolio {:modules {:main {:init-fn automaton-web.portfolio.portfolio/init}}
-                      :target :browser}}
+                  :target :karma}}
  :deps {:aliases [:cljs-deps]}
  :dev-http {8290 ["target/browser-test"]}
- :jvm-opts ["-Xmx1G" "-Dclojure.tools.logging.factory=clojure.tools.logging.impl/log4j2-factory"]
- :nrepl {:middleware [cider.nrepl/cider-middleware cider.piggieback/wrap-cljs-repl]
-         :port 8776}}
+ :nrepl {:port 8776}}
