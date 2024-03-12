@@ -1,10 +1,8 @@
 {:aliases
  {:bb-deps {:extra-deps #:org.clojars.hephaistox{automaton-build
-                                                 {:local/root
-                                                  "../automaton_build"}}}
+                                                 {:mvn/version "1.0.4"}}}
   :build {:extra-deps #:org.clojars.hephaistox{automaton-build
-                                               {:local/root
-                                                "../automaton_build"}}
+                                               {:mvn/version "1.0.4"}}
           :ns-default build}
   :cljs-deps {:extra-deps {binaryage/devtools #:mvn{:version "1.0.7"}
                            clj-commons/pushy #:mvn{:version "0.3.10"}
@@ -21,8 +19,6 @@
                            metosin/reitit-frontend #:mvn{:version "0.6.0"}
                            mount/mount #:mvn{:version "0.1.17"}
                            no.cjohansen/portfolio #:mvn{:version "2023.12.07"}
-                           org.clojars.hephaistox/automaton-core
-                           {:local/root "../automaton_core"}
                            re-frame/re-frame #:mvn{:version "1.4.2"}
                            reagent/reagent #:mvn{:version "1.2.0"}
                            thheller/shadow-cljs #:mvn{:version "2.26.2"}}
@@ -32,9 +28,7 @@
                             "test/cljs"
                             "test/cljc"
                             "env/development/src/cljc"
-                            "env/development/src/cljs"
-                            "../automaton_core/src/cljs"
-                            "../automaton_core/src/cljc"]}
+                            "env/development/src/cljs"]}
   :common-test
   {:exec-fn cognitect.test-runner.api/test
    :extra-deps {com.cognitect/test-runner
@@ -45,7 +39,8 @@
    :extra-paths ["test/clj" "test/cljc" "test/resources"]
    :jvm-opts ["-Dheph-conf=env/test/config.edn,env/common_config.edn"]}
   :env-development-repl
-  {:extra-deps {org.clojure/core.async #:mvn{:version "1.6.681"}}
+  {:extra-deps {org.clojure/core.async #:mvn{:version "1.6.681"}
+                org.clojars.hephaistox/automaton-core {:mvn/version "1.0.2"}}
    :extra-paths ["env/development/resources"
                  "env/development/src/clj"
                  "env/development/src/cljc"]
@@ -70,7 +65,6 @@
         metosin/muuntaja #:mvn{:version "0.6.8"}
         metosin/reitit #:mvn{:version "0.7.0-alpha7"}
         metosin/ring-http-response #:mvn{:version "0.9.3"}
-        org.clojars.hephaistox/automaton-core {:local/root "../automaton_core"}
         ring-cors/ring-cors #:mvn{:version "0.1.13"}
         ring/ring #:mvn{:version "1.11.0"}
         ring/ring-anti-forgery #:mvn{:version "1.3.0"}
