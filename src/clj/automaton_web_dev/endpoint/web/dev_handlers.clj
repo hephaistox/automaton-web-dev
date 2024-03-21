@@ -1,6 +1,7 @@
 (ns automaton-web-dev.endpoint.web.dev-handlers
-  (:require [ring.middleware.reload :as mr]
-            [automaton-core.adapters.deps-edn :as deps-edn]))
+  (:require
+   [automaton-core.adapters.deps-edn :as deps-edn]
+   [ring.middleware.reload           :as mr]))
 
 (def runnables
   "Listof classpath that should trigger a reload"
@@ -21,4 +22,6 @@
   (-> handler
       (mr/wrap-reload {:dirs runnables})))
 
-(def middlewares "Middlewares specific for development environment" [wrap-reload wrap-nocache])
+(def middlewares
+  "Middlewares specific for development environment"
+  [wrap-reload wrap-nocache])
