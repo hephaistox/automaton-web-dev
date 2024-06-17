@@ -1,7 +1,8 @@
 (ns automaton-web-dev.endpoint.web.dev-handlers
   (:require
    [automaton-core.adapters.deps-edn :as deps-edn]
-   [ring.middleware.reload           :as mr]))
+   ;[ring.middleware.reload           :as mr]
+  ))
 
 (def runnables
   "Listof classpath that should trigger a reload"
@@ -19,8 +20,10 @@
 (defn wrap-reload
   "Reload clj as they are saved"
   [handler]
-  (-> handler
-      (mr/wrap-reload {:dirs runnables})))
+  handler
+  ;;FIX Deactivated unless [US970](https://www.notion.so/hephaistox/Ring-reload-middleware-PR-about-as-alias-359d8789694a4bb8b9843646ec8126f1?pvs=4) is fixed
+  #_(-> handler
+        (mr/wrap-reload {:dirs runnables})))
 
 (def middlewares
   "Middlewares specific for development environment"
