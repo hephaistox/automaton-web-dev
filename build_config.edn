@@ -1,6 +1,7 @@
 {:app-name "automaton-web-dev"
  :task-shared {:gha {}
                :publication {:as-lib org.clojars.hephaistox/automaton-web-dev
+                             :deploy-to :clojars
                              :env {:la {}
                                    :production {}}
                              :frontend {:run-aliases [:browser-test :ltest]}
