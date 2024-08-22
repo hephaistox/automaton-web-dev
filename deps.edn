@@ -1,8 +1,10 @@
 {:aliases
- {:bb-deps {:extra-deps {org.clojars.hephaistox/automaton-build {:mvn/version
-                                                                 "2.0.1"}}}
+ {:antq {:deps {com.github.liquidz/antq {:mvn/version "2.9.1217"}}
+         :main-opts ["-m" "antq.core"]}
+  :bb-deps {:extra-deps {org.clojars.hephaistox/automaton-build {:mvn/version
+                                                                 "2.0.2"}}}
   :build {:extra-deps {org.clojars.hephaistox/automaton-build {:mvn/version
-                                                               "2.0.1"}}
+                                                               "2.0.2"}}
           :ns-default build}
   :cljs-deps {:extra-deps {binaryage/devtools #:mvn{:version "1.0.7"}
                            clj-commons/pushy #:mvn{:version "0.3.10"}
@@ -12,16 +14,16 @@
                            com.taoensso/sente #:mvn{:version "1.19.2"}
                            com.taoensso/tempura #:mvn{:version "1.5.3"}
                            day8.re-frame/http-fx #:mvn{:version "0.2.4"}
-                           day8.re-frame/re-frame-10x #:mvn{:version "1.9.8"}
+                           day8.re-frame/re-frame-10x #:mvn{:version "1.9.9"}
                            day8.re-frame/tracing #:mvn{:version "0.6.2"}
                            lambdaisland/uri #:mvn{:version "1.19.155"}
-                           metosin/reitit #:mvn{:version "0.6.0"}
-                           metosin/reitit-frontend #:mvn{:version "0.6.0"}
-                           mount/mount #:mvn{:version "0.1.18"}
-                           no.cjohansen/portfolio #:mvn{:version "2024.03.18"}
+                           metosin/reitit #:mvn{:version "0.7.1"}
+                           metosin/reitit-frontend #:mvn{:version "0.7.1"}
+                           mount/mount #:mvn{:version "0.1.19"}
+                           no.cjohansen/portfolio #:mvn{:version "2024.06.30"}
                            re-frame/re-frame #:mvn{:version "1.4.3"}
                            reagent/reagent #:mvn{:version "1.2.0"}
-                           thheller/shadow-cljs #:mvn{:version "2.28.2"}}
+                           thheller/shadow-cljs #:mvn{:version "2.28.12"}}
               :extra-paths ["src/cljs"
                             "src/cljc"
                             "resources"
@@ -33,14 +35,14 @@
   {:exec-fn cognitect.test-runner.api/test
    :extra-deps {com.cognitect/test-runner
                 {:git/url "https://github.com/cognitect-labs/test-runner"
-                 :sha "7284cda41fb9edc0f3bc6b6185cfb7138fc8a023"}
+                 :sha "9d36f36ff541dac680a05010e4348c744333f191"}
                 org.clojure/tools.namespace #:mvn{:version "1.5.0"}
-                org.clojure/tools.reader #:mvn{:version "1.4.1"}}
+                org.clojure/tools.reader #:mvn{:version "1.5.0"}}
    :extra-paths ["test/clj" "test/cljc" "test/resources"]
    :jvm-opts ["-Dheph-conf=env/test/config.edn,env/common_config.edn"]}
   :env-development-repl
   {:extra-deps {org.clojars.hephaistox/automaton-core {:mvn/version
-                                                       "1.2.8"}
+                                                       "1.2.9"}
                 org.clojure/core.async #:mvn{:version "1.6.681"}}
    :extra-paths ["env/development/resources"
                  "env/development/src/clj"
@@ -62,15 +64,15 @@
  :deps {amalloy/ring-gzip-middleware #:mvn{:version "0.1.4"}
         com.taoensso/sente #:mvn{:version "1.19.2"}
         hiccup/hiccup #:mvn{:version "2.0.0-RC3"}
-        http-kit/http-kit #:mvn{:version "2.7.0"}
+        http-kit/http-kit #:mvn{:version "2.8.0"}
         metosin/muuntaja #:mvn{:version "0.6.10"}
-        metosin/reitit #:mvn{:version "0.7.0-alpha7"}
-        metosin/ring-http-response #:mvn{:version "0.9.3"}
-        org.clojars.hephaistox/automaton-core #:mvn{:version "1.2.8"}
+        metosin/reitit #:mvn{:version "0.7.1"}
+        metosin/ring-http-response #:mvn{:version "0.9.4"}
+        org.clojars.hephaistox/automaton-core #:mvn{:version "1.2.9"}
         ring-cors/ring-cors #:mvn{:version "0.1.13"}
-        ring/ring #:mvn{:version "1.12.0"}
-        ring/ring-anti-forgery #:mvn{:version "1.3.0"}
-        ring/ring-ssl #:mvn{:version "0.3.0"}}
+        ring/ring #:mvn{:version "1.12.2"}
+        ring/ring-anti-forgery #:mvn{:version "1.3.1"}
+        ring/ring-ssl #:mvn{:version "0.4.0"}}
  :paths ["src/clj"
          "src/cljc"
          "src/cljs"
