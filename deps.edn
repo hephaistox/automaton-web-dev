@@ -41,7 +41,8 @@
    :extra-paths ["test/clj" "test/cljc" "test/resources"]
    :jvm-opts ["-Dheph-conf=env/test/config.edn,env/common_config.edn"]}
   :env-development-repl
-  {:extra-deps {org.clojars.hephaistox/automaton-core {:mvn/version "1.3.0-2-la"}
+  {:extra-deps {org.clojars.hephaistox/automaton-core {:mvn/version
+                                                       "1.3.0-2-la"}
                 org.clojure/core.async #:mvn{:version "1.6.681"}}
    :extra-paths ["env/development/resources"
                  "env/development/src/clj"
