@@ -25,6 +25,4 @@
   #_(-> handler
         (mr/wrap-reload {:dirs runnables})))
 
-(def middlewares
-  "Middlewares specific for development environment"
-  [wrap-reload wrap-nocache])
+(def middlewares "Middlewares specific for development environment" [wrap-reload wrap-nocache])
