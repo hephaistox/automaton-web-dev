@@ -6,4 +6,11 @@
           :name "com.taoensso/tempura"
           :version "1.5.3"}]}
  :frontend {:run-aliases [:browser-test :ltest]}
- :publication {:as-lib org.clojars.hephaistox/automaton-web-dev}}
+ :publication
+ {:as-lib org.clojars.hephaistox/automaton-web-dev
+  :base-branch "main"
+  :excluded-aliases
+  [:antq :codox :env-development-repl :env-development-test :common-test :cljs-dev-deps]
+  :pom-xml-license {:name "CC BY-NC 4.0"
+                    :url "https://creativecommons.org/licenses/by-nc/4.0/deed.en"}
+  :repo-url "git@github.com:hephaistox/automaton-web-dev.git"}}
