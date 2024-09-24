@@ -1,9 +1,7 @@
 {:aliases
- {:antq {:deps {com.github.liquidz/antq {:mvn/version "2.9.1217"}}
+ {:antq {:deps {com.github.liquidz/antq {:git/url "https://github.com/Kaspazza/antq"
+                                         :sha "a2606c7dc0edfae1990e367242b28accf2ded115"}}
          :main-opts ["-m" "antq.core"]}
-  :bb-deps {:extra-deps {org.clojars.hephaistox/automaton-build {:mvn/version "3.1.0"}}}
-  :build {:extra-deps {org.clojars.hephaistox/automaton-build {:mvn/version "3.1.0"}}
-          :ns-default build}
   :cljs-deps {:extra-deps {binaryage/devtools #:mvn{:version "1.0.7"}
                            clj-commons/pushy #:mvn{:version "0.3.10"}
                            cljsjs/highlight #:mvn{:version "11.7.0-0"}
@@ -37,8 +35,13 @@
                 org.clojure/tools.reader #:mvn{:version "1.5.0"}}
    :extra-paths ["test/clj" "test/cljc" "test/resources"]
    :jvm-opts ["-Dheph-conf=env/test/config.edn,env/common_config.edn" "-Dhephaistox-in-test=true"]}
+  :deploy {:exclusions [org.slf4j/slf4j-nop]
+           :exec-args {:installer :remote}
+           :exec-fn deps-deploy.deps-deploy/deploy
+           :extra-deps {slipset/deps-deploy {:exclusions [org.slf4j/slf4j-nop]
+                                             :mvn/version "0.2.2"}}}
   :env-development-repl
-  {:extra-deps {org.clojars.hephaistox/automaton-core {:mvn/version "1.4.0"}
+  {:extra-deps {org.clojars.hephaistox/automaton-core {:mvn/version "1.5.0"}
                 org.clojure/core.async #:mvn{:version "1.6.681"}}
    :extra-paths ["env/development/resources" "env/development/src/clj" "env/development/src/cljc"]
    :jvm-opts ["-Dheph-conf=env/development/config.edn,env/common_config.edn"]
@@ -60,7 +63,7 @@
         metosin/muuntaja #:mvn{:version "0.6.10"}
         metosin/reitit #:mvn{:version "0.7.1"}
         metosin/ring-http-response #:mvn{:version "0.9.4"}
-        org.clojars.hephaistox/automaton-core #:mvn{:version "1.4.0"}
+        org.clojars.hephaistox/automaton-core #:mvn{:version "1.5.0"}
         ring-cors/ring-cors #:mvn{:version "0.1.13"}
         ring/ring #:mvn{:version "1.12.2"}
         ring/ring-anti-forgery #:mvn{:version "1.3.1"}
