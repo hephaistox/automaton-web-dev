@@ -1,6 +1,5 @@
 {:aliases
- {:antq {:deps {com.github.liquidz/antq {:git/url "https://github.com/hephaistox/antq"
-                                         :sha "a92a8fe950934f6167d8750cc2e9fdb546c676ff"}}
+ {:antq {:deps {com.github.liquidz/antq {:mvn/version "2.10.1241"}}
          :main-opts ["-m" "antq.core"]}
   :cljs-deps {:extra-deps {binaryage/devtools #:mvn{:version "1.0.7"}
                            clj-commons/pushy #:mvn{:version "0.3.10"}
@@ -13,13 +12,13 @@
                            day8.re-frame/re-frame-10x #:mvn{:version "1.9.9"}
                            day8.re-frame/tracing #:mvn{:version "0.6.2"}
                            lambdaisland/uri #:mvn{:version "1.19.155"}
-                           metosin/reitit #:mvn{:version "0.7.1"}
-                           metosin/reitit-frontend #:mvn{:version "0.7.1"}
+                           metosin/reitit #:mvn{:version "0.7.2"}
+                           metosin/reitit-frontend #:mvn{:version "0.7.2"}
                            mount/mount #:mvn{:version "0.1.19"}
-                           no.cjohansen/portfolio #:mvn{:version "2024.06.30"}
+                           no.cjohansen/portfolio #:mvn{:version "2024.09.25"}
                            re-frame/re-frame #:mvn{:version "1.4.3"}
                            reagent/reagent #:mvn{:version "1.2.0"}
-                           thheller/shadow-cljs #:mvn{:version "2.28.12"}}
+                           thheller/shadow-cljs #:mvn{:version "2.28.15"}}
               :extra-paths ["src/cljs"
                             "src/cljc"
                             "resources"
@@ -41,7 +40,7 @@
            :extra-deps {slipset/deps-deploy {:exclusions [org.slf4j/slf4j-nop]
                                              :mvn/version "0.2.2"}}}
   :env-development-repl
-  {:extra-deps {org.clojars.hephaistox/automaton-core {:mvn/version "1.5.1"}
+  {:extra-deps {org.clojars.hephaistox/automaton-core {:mvn/version "1.5.2"}
                 org.clojure/core.async #:mvn{:version "1.6.681"}}
    :extra-paths ["env/development/resources" "env/development/src/clj" "env/development/src/cljc"]
    :jvm-opts ["-Dheph-conf=env/development/config.edn,env/common_config.edn"]
@@ -61,9 +60,9 @@
         hiccup/hiccup #:mvn{:version "2.0.0-RC3"}
         http-kit/http-kit #:mvn{:version "2.8.0"}
         metosin/muuntaja #:mvn{:version "0.6.10"}
-        metosin/reitit #:mvn{:version "0.7.1"}
+        metosin/reitit #:mvn{:version "0.7.2"}
         metosin/ring-http-response #:mvn{:version "0.9.4"}
-        org.clojars.hephaistox/automaton-core #:mvn{:version "1.5.1"}
+        org.clojars.hephaistox/automaton-core #:mvn{:version "1.5.2"}
         ring-cors/ring-cors #:mvn{:version "0.1.13"}
         ring/ring #:mvn{:version "1.12.2"}
         ring/ring-anti-forgery #:mvn{:version "1.3.1"}
