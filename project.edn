@@ -1,10 +1,6 @@
 {:app-name "automaton-web-dev"
  :code {:forbidden-words #{"DONE" "FIXME" "NOTE" "TODO" "automaton-build" "landing" "tap>"}}
- :deps {:excluded-libs
-        [{:name "com.taoensso/encore"}
-         {:doc "Updating any of taoensso libs results in cljs warnings comming from taoensso/timbre"
-          :name "com.taoensso/tempura"
-          :version "1.5.3"}]}
+ :deps {:excluded-libs []}
  :frontend {:run-aliases [:browser-test :ltest]}
  :publication
  {:base-branch "main"
